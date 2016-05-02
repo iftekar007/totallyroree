@@ -1,0 +1,326 @@
+/* ==========================================================================
+   Media Queries for Responsive Design
+
+   @media only screen and (max-width: 640px) {img {max-width: 100%;}}
+   ========================================================================== */
+
+
+
+/*---- responsive-design -----*/
+@media(max-width:1440px){
+
+}
+@media(max-width:1366px){
+    .servicesright {
+        height: 159px;
+    }
+}
+@media(max-width:1280px){
+    .sitamet-left h1 {font-size: 65px;}
+    .sitamet-left h2 {font-size: 65px;}
+    .dolar-content .purchaseimg img {
+        display: block;
+        clear: both;
+        display: block;
+        max-width: 100%;
+    }
+    img{max-width: 100%; display: block;}
+    .servicesright {
+        height: 132px;
+    }
+}
+
+@media(max-width:1199px) {
+    .socialmedia {
+        width: 205px;
+        margin: 0 auto;
+    }
+    .header-top-right {
+        float: none;
+        margin-right: 0;
+        text-align: center;
+    }
+    .socialmedia{margin-top: 20px;}
+    .socialmedia ul li{margin-top: 0px;}
+    .header-top-right{padding: 0;margin-top: 20px; margin-bottom: 20px;}
+    .socialmedia ul li:last-child{padding-right: 0px;}
+    img {
+        max-width: 100%;
+    }
+    .sitamet-left h1 {font-size: 65px;}
+    .sitamet-left h2 {font-size: 60px;}
+
+    .navbar-header {float: none;}
+    .navbar-toggle {display: block;}
+    .navbar-collapse {border-top: 1px solid transparent; box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);}
+    .navbar-collapse.collapse {display: none!important;}
+    .navbar-nav {float: none!important; margin: 7.5px -15px;}
+    .navbar-nav>li {float: none;}
+    .navbar-nav>li>a {padding-top: 10px; padding-bottom: 10px;}
+    .navbar-text {float: none; margin: 15px 0;}
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in { display: block!important;}
+    .collapsing {overflow: hidden!important;}
+}
+@media(min-width:1199px) {
+    .navbar-default .navbar-brand {display: none;}
+
+}
+
+@media(max-width:1198px) {
+    .navbar-default .navbar-brand {display: block;}
+    .navbar-header {background-color: #333;}
+    .navbar-brand {padding: 12px 15px;}
+}
+
+
+@media(max-width:1080px){
+    .sitamet-left h1 {font-size: 65px;}
+    .sitamet-left h2 {font-size: 60px;}
+}
+@media(max-width:1024px){
+    img{max-width: 100%;}
+
+}
+
+@media(max-width:1023px){
+    .logo {display: block; margin: 0 auto;}
+    .dolar-content p {text-align: left;}
+}
+
+@media(max-width:991px){
+    .productslist {
+        max-width: 649px;
+        margin: 0 auto;
+        padding-top: 30px;
+    }
+
+
+}
+@media(max-width:800px){
+
+ }
+@media(max-width:768px){
+
+    .navbar-nav {background-color: #fff;}
+    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > ul > li > a:hover{
+        border-radius:0px;
+    }
+    .nav > li > a {
+        padding: 10px 8px;
+        margin-top: 0;
+        text-align: center;
+    }
+    .navbar-toggle {margin-top: 0px;}
+    .footer-bg {text-align: center;}
+    .dolar-content .lineimg img, .dolar-content .lineimg1 img { display: none;}
+    #dolarsit { height: auto; margin-bottom: 24px;}
+    #dolarsit .dolarsitimgright img{margin-bottom: 0px;}
+    #dolarsit .dolarsitimgleft img {margin-bottom: 10px;}
+    #dolarsit .dolatsit_content .inner-info-top h2{margin-bottom: 30px;}
+    #roreemanlive{height: auto; margin-bottom: 10px; }
+
+    .btnview .btneye {
+        font-size: 16px;
+    }
+    img{max-width: 100%;}
+    #sitamet {
+        height: auto;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+
+    .sitamet-right{background-color: rgba(255, 255, 255, 0.8); width: 100%; padding: 10px;}
+    .sitamet-right p{padding-top: 0px;text-align: center;}
+    .sitamet-right .btnview {max-width: 288px; float: none;}
+    .dolar-content .purchaseimg img { max-width: 600px; margin: 0 auto; display: block; clear: both; margin-top:30px;}
+    .dolar-content h3{max-width: 100%;}
+    .dolar-content p { max-width: 100%; text-align: left;}
+    .trainer-content-bottom img {
+        height: auto;
+        width: auto;
+        margin-bottom: 10px;
+    }
+    .trainer-inner {
+        margin-top: 30px;
+    }
+    .dolatsit_content .inner-info-top h2 span {font-size: 33px;}
+    .singletestimonials {margin-bottom: 50px;}
+    .productslist {
+        max-width: 434px;
+        margin: 0 auto;
+        padding-top: 30px;
+    }
+    .productdetail{margin-bottom: 25px;}
+    #trainer {padding: 10px 0px 0px;}
+}
+@media(max-width:640px){
+    .header-top-right {
+        width: 96%;
+        margin-left:auto;
+        margin-right: auto;
+    }
+    .inner-info-top h2 {
+        font-size: 34px; margin-bottom: 31px;
+    }
+
+
+
+
+
+    .trainer-content-bottom img {
+        height: auto;
+        width: auto;
+        margin-bottom: 10px;
+    }
+    .dolar-content .purchaseimg img {
+        max-width: 100%;
+        margin: 0 auto
+        margin-top: 30px;
+    }
+    .sitamet-left h1{font-size: 36px;}
+    .sitamet-left h2{font-size: 28px;margin: 9px 0px 15px 0px;}
+    .row{margin:0px;}
+    .mainmenu {margin: 0px 0px;}
+    .singletestimonials {margin-bottom: 50px;}
+
+}
+@media(max-width:600px){
+
+}
+@media(max-width:480px){
+    .socialmedia {
+        width: 165px;
+        margin: 20px auto 0px auto;
+    }
+    .singletestimonials .testiimg i {
+        padding: 0px;
+    }
+    .roreemanlive_content .inner-info-top h3 {
+        font-size: 28px;
+    }
+    .roreemanlive_content {
+        margin-top: 36px;
+    }
+    .logo {
+        margin-top: 17px;
+        width: 242px;
+    }
+    .singletestimonials {margin-bottom: 50px;}
+}
+@media(max-width:320px){
+
+}
+/*--//responsive-design---*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after,
+    *:first-letter,
+    *:first-line {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
