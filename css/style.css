@@ -291,23 +291,24 @@ textarea {resize: vertical;}
 
 .dolar-content{position: relative; display: block;}
 .dolar-content .purchaseimg img{display: block;clear: both; display: block; }
-.dolar-content h3{font-family: 'PTSans-Bold'; font-weight: bold;  font-size: 22px; text-transform: uppercase; max-width: 300px; margin-left: 5px;}
+.dolar-content h3{font-family: 'PTSans-Bold'; font-weight: bold;  font-size: 22px; text-transform: uppercase; max-width: 298px; margin-left: 5px;}
 .dolar-content p{font-family: 'PTSans';  font-size: 18px; max-width: 480px; margin-left: 4px; text-align: left;}
 
 .dolar-content ul{margin: 0; width: 94%;}
 .dolar-content ul li:nth-child(1) {margin: 0;}
 .dolar-content ul li {display: block; margin: 5px 0 0; position: relative;}
 .dolar-content ul li:hover {color: #000;}
-.dolar-content ul li:before {content: ''; background: url("../images/img-dolar-list.png")no-repeat 0px 0px; position: absolute; top: 20%; left: -8%; display: block; width: 24px; height: 14px;}
+.dolar-content ul li:before {content: ''; background: url("../images/img-dolar-list.png")no-repeat 0px 0px; position: absolute; top: 6px; left: -34px; display: block; width: 24px; height: 14px;}
 .dolar-content ul li a:hover:before {left: 1.5%;}
-.dolar-content ul li .span{color:#214d00; font-weight: bold;}
-.dolar-content .lineimg img {position: absolute;right: 26px;clear: both; top: 62%;}
-.dolar-content .lineimg1 img{position: absolute; right: 64px; clear: both; top: 71%;}
+.dolar-content ul li span{color:#214d00; font-weight: bold;}
+.dolar-content .lineimg img {position: absolute;right: 26px;clear: both;bottom: 13px;}
+.dolar-content .lineimg1 img {position: absolute; right: 64px; clear: both; bottom: -18px;}
 
 /*---dolarsit CSS------*/
 #dolarsit{position: relative; height: 650px;margin-bottom: 100px; background: url(../images/dolarsit-bg.png)no-repeat center center; clear: both; display: block; margin: 30px 0px; background-size: cover; }
 .dolatsit_content{margin-top:45px;}
-.dolatsit_content .inner-info-top h2 span{font-family: 'PTSans'; font-size: 50px; text-transform: uppercase; text-align: center; margin:0; margin-bottom: 22px;}
+.dolatsit_content .inner-info-top h2 {font-size: 50px; text-transform: uppercase; text-align: center; margin:0; margin-bottom: 22px;}
+.dolatsit_content .inner-info-top h2 span{font-family: 'PTSans';}
 #dolarsit .inner-info-top p{font-family: 'PTSans';  font-size: 18px; max-width: 712px; margin: 0 auto; text-align: center; margin-bottom: 20px;}
 .btnview{max-width: 330px; margin: 0 auto;}
 .btnview .btneye{background-color: #c800c8; border:0; color:#fff; font-family: 'PTSans-Bold'; font-weight: bold;  font-size: 22px; text-transform: uppercase; border-radius: 40px;}
@@ -327,13 +328,14 @@ url(../images/dolarsit-imgleft.png) left bottom no-repeat,
 
 
 /*---trainer----*/
-#trainer{position: relative; padding: 30px 0px 0px;margin-top: 20px; clear: both; display: block; background-color: #5fc8dd;}
+#trainer{position: relative; padding: 30px 0px 0px;margin-top: 20px; clear: both; display: block;}
 .trainer-inner{}
 .trainer-content-top{max-width: 611px; background-color: #fff; margin: 0; display: block; padding: 7px 10px;}
 .trainer-content-bottom{max-width: 631px; background-color: transparent; margin: 0; display: block;}
-.trainer-content-top h2{color:#1b1b1b;font-family: 'PTSans-Bold'; font-size: 30px;}
-.trainer-content-top h2 span{font-family: 'PTSans'; font-size: 34px;}
-.trainer-content-top h4{color:#5e5e5e;font-family: 'PTSans'; font-size: 16px;}
+.trainer-content-top h2{color:#1b1b1b;font-family: 'PTSans'; font-size: 30px;}
+.trainer-content-top h2 span{font-family: 'PTSans-Bold'; font-size: 30px;}
+.trainer-content-top h2:after{content:''; width: 115px; height: 2px; position: absolute; left: 50%; margin-left: -57.5px; background-color: #c800c8; margin-top: 8px; clear: both; }
+.trainer-content-top h4{color: #5e5e5e; font-family: 'PTSans'; font-size: 16px; max-width: 486px; margin: 0px auto; padding-top: 14px; padding-bottom: 34px;}
 .trainer-content-top p{color:#000000;font-family: 'PTSans'; font-size: 18px;}
 .trainer-content-bottom{margin-top:15px;}
 .trainer-content-bottom img{height: 204px;width: 100%;}
@@ -343,16 +345,20 @@ url(../images/dolarsit-imgleft.png) left bottom no-repeat,
 .trainer-inner .trainer-content-top h2{color:#1b1b1b;}
 .trainer-inner .trainer-content-top h2 span{color:#83afa2;}
 .trainer-inner .trainer-content-top p{}
+.trainer-inner .trainer-content-top p span{font-family: 'PTSans';  padding-top: 46px; padding-bottom: 40px; font-size: 18px; max-width: 672px; text-align: right; text-transform: uppercase;color:#c800c8;}
 
 
 /*---roreemanlive CSS------*/
 
 #roreemanlive{position: relative; height: 277px;margin-bottom: 10px;margin: 30px 0px; clear: both;}
-.roreemanlive{ background-color:#88a800; width: 100%; border-top:1px solid #d8d1d1;  display: block;overflow: hidden;}
-.roreemanlive_content{margin-top:85px;}
+.roreemanlive{ background-color:#5fc8dd; width: 100%; border-top:1px solid #d8d1d1;  display: block;overflow: hidden;}
+.roreemanlive_content{margin-top:20px;}
 .roreemanlive_content .inner-info-top h2{font-family: 'PTSans'; font-size: 34px; text-transform: uppercase; text-align: center; margin:0; margin-bottom: 10px; color:#fff; text-shadow: 1px 1px 1px #343333;}
-.roreemanlive_content .inner-info-top h3{font-family: 'PTSans-Bold'; font-size: 34px; text-transform: uppercase; text-align: center; margin:0; margin-bottom: 10px;}
-.roreemanlive_content .inner-info-top p{font-family: 'PTSans';  font-size: 22px; max-width: 672px; margin: 0 auto; text-align: center; margin-bottom: 20px; color:#fff; text-shadow: 1px 1px 1px #343333;}
+.roreemanlive_content .inner-info-top h2:after{display: none;}
+.roreemanlive_content .inner-info-top h3{font-family: 'PTSans'; font-size: 34px; text-transform: uppercase; text-align: center; margin:0; margin-bottom: 10px; color:#1b1b1b; max-width: 585px; margin-left:auto; margin-right: auto;}
+.roreemanlive_content .inner-info-top h3:after{content:''; width: 115px; height: 2px; position: absolute; left: 50%; margin-left: -57.5px; background-color: #c800c8; margin-top: 8px; clear: both; }
+.roreemanlive_content .inner-info-top p{font-family: 'PTSans-Italic';  font-size: 22px; max-width: 672px; margin: 21px auto 0px; text-align: center; margin-bottom: 21px; color:#000000;}
+.roreemanlive_content .inner-info-top p span{color:#c700c8;}
 #roreemanlive .roreemanliveimgleft{background-position: top left; float: left;}
 #roreemanlive .roreemanliveimgright{background-position: top right; float: right;}
 .roreemanliveimgleft{margin-left: 0px; padding: 0px;}
@@ -363,6 +369,10 @@ url(../images/dolarsit-imgleft.png) left bottom no-repeat,
 
 /*---personaldevlspeaker----*/
 #personaldevlspeaker{position: relative; margin-top: 20px; clear: both; display: block;}
+#personaldevlspeaker .trainer-content-top h2{font-family: 'PTSans';  font-size: 34px; max-width: 672px; text-align: center;}
+#personaldevlspeaker .trainer-content-top h2 span{font-family: 'PTSans-Bold'; color:#83afa2;}
+#personaldevlspeaker .trainer-content-top p{font-family: 'PTSans';  font-size: 18px; max-width: 672px; text-align: center;}
+#personaldevlspeaker .trainer-content-top p span{font-family: 'PTSans';  padding-top: 46px; padding-bottom: 40px; font-size: 18px; max-width: 672px; text-align: right; text-transform: uppercase;color:#c800c8;}
 
 
 /*-----sitamet------*/
@@ -390,9 +400,9 @@ url(../images/dolarsit-imgleft.png) left bottom no-repeat,
 .servicesright h2{font-family: 'PTSans-Bold'; font-size: 28px; text-transform: uppercase;}
 .servicesright h2:after{content: ''; width: 115px; height: 2px; position: absolute; left: 50%; margin-left: -57.5px; background-color: #fff; clear: both;  top: 55px;}
 .servicesright p{max-width: 245px; margin: 0 auto; font-family: 'PTSans'; font-size: 18px;  }
-.one{background-color: #88a800;}
-.two{background-color: #214d00;}
-.three{background-color: #c800c8;}
+.one{background-color: #83afa2;}
+.two{background-color: #5cb8af;}
+.three{background-color: #58b6d0;}
 
 
 /*-----testimonials------*/

@@ -31,6 +31,7 @@
 }
 
 @media(max-width:1199px) {
+	
     .socialmedia {
         width: 205px;
         margin: 0 auto;
@@ -47,6 +48,13 @@
     img {
         max-width: 100%;
     }
+	.logo {
+        width: 242px;
+		margin: 0 auto;
+		padding-top: 12px;
+		padding-bottom: 12px;
+    }
+	
     .sitamet-left h1 {font-size: 65px;}
     .sitamet-left h2 {font-size: 60px;}
 
@@ -61,6 +69,8 @@
     /* since 3.1.0 */
     .navbar-collapse.collapse.in { display: block!important;}
     .collapsing {overflow: hidden!important;}
+	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:active {border-radius: 0px;}
+	.col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {padding-left:0px;padding-right:0px;}
 }
 @media(min-width:1199px) {
     .navbar-default .navbar-brand {display: none;}
@@ -71,6 +81,8 @@
     .navbar-default .navbar-brand {display: block;}
     .navbar-header {background-color: #333;}
     .navbar-brand {padding: 12px 15px;}
+	.sitamet-left h2 {font-size: 65px;}
+	.sitamet-left h1 {font-size: 65px;}
 }
 
 
@@ -83,8 +95,7 @@
 
 }
 
-@media(max-width:1023px){
-    .logo {display: block; margin: 0 auto;}
+@media(max-width:1023px){    
     .dolar-content p {text-align: left;}
 }
 
@@ -133,7 +144,7 @@
     .sitamet-right{background-color: rgba(255, 255, 255, 0.8); width: 100%; padding: 10px;}
     .sitamet-right p{padding-top: 0px;text-align: center;}
     .sitamet-right .btnview {max-width: 288px; float: none;}
-    .dolar-content .purchaseimg img { max-width: 600px; margin: 0 auto; display: block; clear: both; margin-top:30px;}
+    .dolar-content .purchaseimg img { max-width: 600px; margin: 0 auto; display: block; clear: both;}
     .dolar-content h3{max-width: 100%;}
     .dolar-content p { max-width: 100%; text-align: left;}
     .trainer-content-bottom img {
@@ -153,6 +164,9 @@
     }
     .productdetail{margin-bottom: 25px;}
     #trainer {padding: 10px 0px 0px;}
+	.dolar-content ul {margin-bottom: 30px;}
+	#dolarsit {background: transparent;background-color: #00ff00; padding-bottom: 20px;}
+	.dolatsit_content {margin-top: 20px;}
 }
 @media(max-width:640px){
     .header-top-right {
@@ -163,10 +177,6 @@
     .inner-info-top h2 {
         font-size: 34px; margin-bottom: 31px;
     }
-
-
-
-
 
     .trainer-content-bottom img {
         height: auto;
@@ -190,7 +200,6 @@
 }
 @media(max-width:480px){
     .socialmedia {
-        width: 165px;
         margin: 20px auto 0px auto;
     }
     .singletestimonials .testiimg i {
@@ -202,10 +211,7 @@
     .roreemanlive_content {
         margin-top: 36px;
     }
-    .logo {
-        margin-top: 17px;
-        width: 242px;
-    }
+    
     .singletestimonials {margin-bottom: 50px;}
 }
 @media(max-width:320px){
