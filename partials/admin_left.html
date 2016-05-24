@@ -32,21 +32,16 @@
             <!-- Optionally, you can add icons to the links -->
            <!-- <li class="active"><a href="javascript:void(0)"><i class="fa fa-link"></i> <span>Link</span></a></li>-->
  <li><a ui-sref="dashboard"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
-            <li class="treeview" ng-if="userrole==4">
+            <li class="treeview">
               <a href="javascript:void(0)"><i class="fa fa-link"></i> <span>Admin Manager</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu left_treemenu">
-                <li><a style="background:#9c0404!important;" ui-sref="add-admin">Add Admin</a></li>
-                <li><a style="background:#9c0404!important;" ui-sref="admin-list">Admin List</a></li>
+                <li><a  ui-sref="add-admin">Add Admin</a></li>
+                <li><a  ui-sref="admin-list">Admin List</a></li>
               </ul>
             </li>
- <!--             <li class="treeview">
-                  <a href="javascript:void(0)"><i class="fa fa-link"></i> <span>Signup User Manager</span> <i class="fa fa-angle-left pull-right"></i></a>
-                  <ul class="treeview-menu">
-                  
-                  
-                  
--->
-                     
+
+
+
                       <li ng-if="userrole==4"><a ui-sref="signupuser-list"><i class="fa fa-link"></i> <span>Member Signup Leads</span></a></li>
                       <li ng-if="userrole==4"><a ui-sref="employement-list"><i class="fa fa-link"></i> <span>Employment Leads</span></a></li>
                       <li ng-if="userrole==4"><a ui-sref="pilot-list"><i class="fa fa-link"></i> <span>Pilot List</span></a></li>
@@ -106,7 +101,7 @@
                  <li ng-if="userrole==4" ><a ui-sref="addcontent"><i class="fa fa-link"></i> <span>Add Content</span></a></li>
                  <li ng-if="userrole==4" ><a ui-sref="contentlist"><i class="fa fa-link"></i> <span>Content List</span></a></li>
 
-                  <li><a style="cursor: pointer" ui-sref="logout" ng-click="logout()"><i class="fa fa-link"></i> <span>Logout</span></a></li>
+                  <li><a style="cursor: pointer" ng-click="logout()"><i class="fa fa-link"></i> <span>Logout</span></a></li>
 
           </ul><!-- /.sidebar-menu -->
         </section>

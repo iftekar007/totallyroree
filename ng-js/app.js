@@ -7,7 +7,7 @@
 
 /* App Module */
 
-var tr = angular.module('tr', ['ui.router','ngCookies','angularValidator','ngFileUpload','ui.tinymce']);
+var tr = angular.module('tr', ['ui.router','ui.bootstrap','ngCookies','angularValidator','ngFileUpload','ui.tinymce']);
 
 
 
@@ -101,7 +101,7 @@ tr.run(['$rootScope', '$state','contentservice','$cookieStore','carttotal',funct
 
         $rootScope.userid=$cookieStore.get('userid');
 
-        console.log($rootScope.userid+'state change user id');
+       // console.log($rootScope.userid+'state change user id');
 
         if($rootScope.userid == 0)  $rootScope.cartuser=$cookieStore.get('randomid');
         else {
@@ -132,7 +132,7 @@ tr.run(['$rootScope', '$state','contentservice','$cookieStore','carttotal',funct
 
            // $rootScope.userid=$cookieStore.get('userid');
 
-            console.log($rootScope.userid+'state change user id success ');
+            //console.log($rootScope.userid+'state change user id success ');
 
             if($rootScope.userid == 0)  $rootScope.cartuser=$cookieStore.get('randomid');
             else {
@@ -194,7 +194,7 @@ tr.run(['$rootScope', '$state','contentservice','$cookieStore','carttotal',funct
 
 
 
-            console.log($rootScope.userid+'userid');
+          //  console.log($rootScope.userid+'userid');
             //if($rootScope.userid<1)
 
                 //$('.editableicon').hide();
@@ -215,8 +215,8 @@ tr.run(['$rootScope', '$state','contentservice','$cookieStore','carttotal',funct
 
 tr.filter("sanitize123", ['$sce', function($sce) {
     return function(htmlCode){
-        console.log(htmlCode);
-        console.log('santize');
+       // console.log(htmlCode);
+       // console.log('santize');
         return $sce.trustAsHtml(htmlCode);
     }
 }]);
@@ -327,6 +327,101 @@ tr.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         }
     )
 
+        .state('add-admin',{
+                url:"/add-admin",
+                views: {
+
+                    'admin_header': {
+                        templateUrl: 'partials/admin_top_menu.html' ,
+                        controller: 'admin_header'
+                    },
+                    'admin_left': {
+                        templateUrl: 'partials/admin_left.html' ,
+                        //  controller: 'admin_left'
+                    },
+                    'admin_footer': {
+                        templateUrl: 'partials/admin_footer.html' ,
+                    },
+                    'content': {
+                        templateUrl: 'partials/add_admin.html' ,
+                        controller: 'addadmin'
+                    },
+
+                }
+            }
+        )
+
+        .state('edit-admin',{
+                url:"/edit-admin/:userId",
+                views: {
+
+                    'admin_header': {
+                        templateUrl: 'partials/admin_top_menu.html' ,
+                        controller: 'admin_header'
+                    },
+                    'admin_left': {
+                        templateUrl: 'partials/admin_left.html' ,
+                    },
+                    'admin_footer': {
+                        templateUrl: 'partials/admin_footer.html' ,
+                    },
+                    'content': {
+                        templateUrl: 'partials/edit_admin.html' ,
+                        controller: 'editadmin'
+                    },
+
+                }
+            }
+        )
+
+        .state('admin-list',{
+                url:"/admin-list",
+                views: {
+
+                    'admin_header': {
+                        templateUrl: 'partials/admin_top_menu.html' ,
+                        controller: 'admin_header'
+                    },
+                    'admin_left': {
+                        templateUrl: 'partials/admin_left.html' ,
+                        //  controller: 'admin_left'
+                    },
+                    'admin_footer': {
+                        templateUrl: 'partials/admin_footer.html' ,
+                    },
+                    'content': {
+                        templateUrl: 'partials/admin_list.html' ,
+                        controller: 'adminlist'
+                    },
+
+                }
+            }
+        )
+        .state('generaluser-list',{
+                url:"/generaluser-list",
+                views: {
+
+                    'admin_header': {
+                        templateUrl: 'partials/admin_top_menu.html' ,
+                        controller: 'admin_header'
+                    },
+                    'admin_left': {
+                        templateUrl: 'partials/admin_left.html' ,
+                        //  controller: 'admin_left'
+                    },
+                    'admin_footer': {
+                        templateUrl: 'partials/admin_footer.html' ,
+                    },
+                    'content': {
+                        templateUrl: 'partials/generaluser_list.html' ,
+                        controller: 'generaluserlist'
+                    },
+
+                }
+            }
+        )
+
+
         .state('addcontent',{
             url:"/add-content",
             views: {
@@ -364,6 +459,177 @@ tr.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
                 },
                 'content': {
                     templateUrl: 'partials/home.html' ,
+                    controller: 'index'
+                },
+
+            }
+        }
+    )
+
+        .state('aboutme',{
+            url:"/aboutme",
+            views: {
+
+                'admin_header': {
+                    templateUrl: 'partials/header.html' ,
+                    controller: 'header'
+                },
+                'admin_footer': {
+                    templateUrl: 'partials/front_footer.html' ,
+                    controller:'footer'
+                },
+                'content': {
+                    templateUrl: 'partials/aboutme.html' ,
+                    controller: 'aboutme'
+                },
+
+            }
+        }
+    )
+
+        .state('retreat',{
+                url:"/retreat",
+                views: {
+
+                    'admin_header': {
+                        templateUrl: 'partials/header.html' ,
+                        controller: 'header'
+                    },
+                    'admin_footer': {
+                        templateUrl: 'partials/front_footer.html' ,
+                        controller:'footer'
+                    },
+                    'content': {
+                        templateUrl: 'partials/retreat.html' ,
+                        controller: 'retreat'
+                    },
+
+                }
+            }
+        )
+
+        .state('signup',{
+                url:"/signup",
+                views: {
+
+                    'admin_header': {
+                        templateUrl: 'partials/header.html' ,
+                        controller: 'header'
+                    },
+                    'admin_footer': {
+                        templateUrl: 'partials/front_footer.html' ,
+                        controller:'footer'
+                    },
+                    'content': {
+                        templateUrl: 'partials/signup.html' ,
+                        controller: 'signup'
+                    },
+
+                }
+            }
+        )
+
+
+        .state('login',{
+                url:"/login",
+                views: {
+
+                    'admin_header': {
+                      //  templateUrl: 'partials/header.html' ,
+                        controller: 'header'
+                    },
+                    'admin_footer': {
+                       // templateUrl: 'partials/front_footer.html' ,
+                        controller:'footer'
+                    },
+                    'content': {
+                        templateUrl: 'partials/login.html' ,
+                        controller: 'login'
+                    },
+
+                }
+            }
+        )
+        .state('forgot-password',{
+                url:"/forgot-password",
+                views: {
+
+                    'admin_header': {
+                        //  templateUrl: 'partials/header.html' ,
+                        controller: 'header'
+                    },
+                    'admin_footer': {
+                        // templateUrl: 'partials/front_footer.html' ,
+                        controller:'footer'
+                    },
+                    'content': {
+                        templateUrl: 'partials/forgot_password.html' ,
+                        controller: 'forgotpassword'
+                    },
+
+                }
+            }
+        )
+        .state('forgot-password-check',{
+                url:"/forgot-password-check",
+                views: {
+
+                    'admin_header': {
+                        //  templateUrl: 'partials/header.html' ,
+                        controller: 'header'
+                    },
+                    'admin_footer': {
+                        // templateUrl: 'partials/front_footer.html' ,
+                        controller:'footer'
+                    },
+                    'content': {
+                        templateUrl: 'partials/forgot_password_check.html' ,
+                        controller: 'forgotpasswordcheck'
+                    },
+
+                }
+            }
+        )
+
+        .state('change-password',{
+                url:"/change-password",
+                views: {
+
+                    'admin_header': {
+                        //  templateUrl: 'partials/header.html' ,
+                        controller: 'header'
+                    },
+                    'admin_footer': {
+                        // templateUrl: 'partials/front_footer.html' ,
+                        controller:'footer'
+                    },
+                    'content': {
+                        templateUrl: 'partials/change_password.html' ,
+                        controller: 'change_password'
+                    },
+
+                }
+            }
+        )
+
+
+
+
+
+        .state('affiliate',{
+            url:"/affiliate",
+            views: {
+
+                'admin_header': {
+                    templateUrl: 'partials/header.html' ,
+                    controller: 'header'
+                },
+                'admin_footer': {
+                    templateUrl: 'partials/front_footer.html' ,
+                    controller:'footer'
+                },
+                'content': {
+                    templateUrl: 'partials/affiliate.html' ,
                     controller: 'index'
                 },
 
@@ -532,13 +798,458 @@ tr.controller('ModalInstanceCtrl', function($scope,$state,$cookieStore,$http,$ui
     }
 
 
+    $scope.confirmdeladmin = function(){
+        $uibModalInstance.dismiss('cancel');
 
+        $rootScope.stateIsLoading = true;
+        var idx = $scope.currentindex;
+        $http({
+            method  : 'POST',
+            async:   false,
+            url     : $scope.adminUrl+'deleteadmin',
+            data    : $.param({uid: $scope.userlist[idx].uid}),  // pass in data as strings
+            headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
+        }) .success(function(data) {
+            $rootScope.stateIsLoading = false;
+            $scope.userlist.splice(idx,1);
+            // $scope.userlistp = $scope.userlist.slice($scope.begin, parseInt($scope.begin+$scope.perPage));
+
+        });
+    }
 
 
 });
 
 
 tr.controller('index', function($compile,$scope,contentservice,$state,$http,$cookieStore,$rootScope,Upload,$sce,carttotal) {
+
+    $scope.interval=600;
+    $scope.contentupdated=false;
+    var myVar =setInterval(function(){
+
+        $rootScope.contentdata=contentservice.getcontent( $scope.adminUrl+'contentlist');
+
+
+        //console.log('in setInterval'+$scope.interval);
+        //console.log( $rootScope.contentdata);
+        var x;
+        var y;
+        if(typeof ($rootScope.contentdata)!='undefined' && $scope.contentupdated){
+
+            $scope.interval=999990;
+
+            clearInterval(myVar);
+        }
+
+        $scope.contentupdated=true;
+        for (x in $rootScope.contentdata ){
+            var contentw='';
+            //console.log($rootScope.contentdata[x]);
+            //console.log(($rootScope.contentdata[x].content)+'c----n');
+            //console.log(($rootScope.contentdata[x].parentid));
+
+
+            if($rootScope.contentdata[x].ctype!='image') {
+
+                for (y in $rootScope.contentdata[x].content) {
+                    if ($rootScope.contentdata[x].ctype != 'image')
+                        contentw += ($rootScope.contentdata[x].content[y]);
+                    else {
+
+                        contentw += "<img src=" + $rootScope.contentdata[x].content[y] + " />";
+                    }
+                }
+                $rootScope.contentdata[x].content=(contentw);
+            }
+            /* else{
+
+             $rootScope.contentdata[x].content = "< img src = " + $rootScope.contentdata[x].content + " >";
+
+             //$rootScope.contentdata[x].content=$rootScope.contentdata[x].content.replace('["','').replace.(']"','');
+             }*/
+
+
+          //  console.log(($rootScope.contentdata[x].content));
+            $scope[$rootScope.contentdata[x].cname+$rootScope.contentdata[x].id]=$rootScope.contentdata[x];
+            if($rootScope.contentdata[x].parentid!=0){
+
+                var z=parseInt($rootScope.contentdata[x].parentid);
+             //   console.log(z);
+              //  console.log($rootScope.contentdata[x].cname+$rootScope.contentdata[x].parentid);
+
+                $scope[$rootScope.contentdata[x].cname+$rootScope.contentdata[x].parentid]=$rootScope.contentdata[x];
+
+            }
+
+            //var model=$parse($rootScope.contentdata[x].id);
+            //model.assign($scope, $rootScope.contentdata[x]);
+            //.id=$rootScope.contentdata[x];
+        }
+
+        //console.log('----'+$scope);
+
+
+    },$scope.interval);
+
+
+
+
+
+});
+tr.controller('aboutme', function($compile,$scope,contentservice,$state,$http,$cookieStore,$rootScope,Upload,$sce,carttotal) {
+
+    $scope.interval=600;
+    $scope.contentupdated=false;
+    var myVar =setInterval(function(){
+
+        $rootScope.contentdata=contentservice.getcontent( $scope.adminUrl+'contentlist');
+
+
+        //console.log('in setInterval'+$scope.interval);
+        //console.log( $rootScope.contentdata);
+        var x;
+        var y;
+        if(typeof ($rootScope.contentdata)!='undefined' && $scope.contentupdated){
+
+            $scope.interval=999990;
+
+            clearInterval(myVar);
+        }
+
+        $scope.contentupdated=true;
+        for (x in $rootScope.contentdata ){
+            var contentw='';
+            //console.log($rootScope.contentdata[x]);
+            //console.log(($rootScope.contentdata[x].content)+'c----n');
+            //console.log(($rootScope.contentdata[x].parentid));
+
+
+            if($rootScope.contentdata[x].ctype!='image') {
+
+                for (y in $rootScope.contentdata[x].content) {
+                    if ($rootScope.contentdata[x].ctype != 'image')
+                        contentw += ($rootScope.contentdata[x].content[y]);
+                    else {
+
+                        contentw += "<img src=" + $rootScope.contentdata[x].content[y] + " />";
+                    }
+                }
+                $rootScope.contentdata[x].content=(contentw);
+            }
+            /* else{
+
+             $rootScope.contentdata[x].content = "< img src = " + $rootScope.contentdata[x].content + " >";
+
+             //$rootScope.contentdata[x].content=$rootScope.contentdata[x].content.replace('["','').replace.(']"','');
+             }*/
+
+
+            console.log(($rootScope.contentdata[x].content));
+            $scope[$rootScope.contentdata[x].cname+$rootScope.contentdata[x].id]=$rootScope.contentdata[x];
+            if($rootScope.contentdata[x].parentid!=0){
+
+                var z=parseInt($rootScope.contentdata[x].parentid);
+                console.log(z);
+                console.log($rootScope.contentdata[x].cname+$rootScope.contentdata[x].parentid);
+
+                $scope[$rootScope.contentdata[x].cname+$rootScope.contentdata[x].parentid]=$rootScope.contentdata[x];
+
+            }
+
+            //var model=$parse($rootScope.contentdata[x].id);
+            //model.assign($scope, $rootScope.contentdata[x]);
+            //.id=$rootScope.contentdata[x];
+        }
+
+        //console.log('----'+$scope);
+
+
+    },$scope.interval);
+
+
+
+
+
+});
+tr.controller('retreat', function($compile,$scope,contentservice,$state,$http,$cookieStore,$rootScope,Upload,$sce,carttotal) {
+    $scope.interval=600;
+    $scope.contentupdated=false;
+    var myVar =setInterval(function(){
+
+        $rootScope.contentdata=contentservice.getcontent( $scope.adminUrl+'contentlist');
+
+
+        //console.log('in setInterval'+$scope.interval);
+        //console.log( $rootScope.contentdata);
+        var x;
+        var y;
+        if(typeof ($rootScope.contentdata)!='undefined' && $scope.contentupdated){
+
+            $scope.interval=999990;
+
+            clearInterval(myVar);
+        }
+
+        $scope.contentupdated=true;
+        for (x in $rootScope.contentdata ){
+            var contentw='';
+            //console.log($rootScope.contentdata[x]);
+            //console.log(($rootScope.contentdata[x].content)+'c----n');
+            //console.log(($rootScope.contentdata[x].parentid));
+
+
+            if($rootScope.contentdata[x].ctype!='image') {
+
+                for (y in $rootScope.contentdata[x].content) {
+                    if ($rootScope.contentdata[x].ctype != 'image')
+                        contentw += ($rootScope.contentdata[x].content[y]);
+                    else {
+
+                        contentw += "<img src=" + $rootScope.contentdata[x].content[y] + " />";
+                    }
+                }
+                $rootScope.contentdata[x].content=(contentw);
+            }
+            /* else{
+
+             $rootScope.contentdata[x].content = "< img src = " + $rootScope.contentdata[x].content + " >";
+
+             //$rootScope.contentdata[x].content=$rootScope.contentdata[x].content.replace('["','').replace.(']"','');
+             }*/
+
+
+            console.log(($rootScope.contentdata[x].content));
+            $scope[$rootScope.contentdata[x].cname+$rootScope.contentdata[x].id]=$rootScope.contentdata[x];
+            if($rootScope.contentdata[x].parentid!=0){
+
+                var z=parseInt($rootScope.contentdata[x].parentid);
+                console.log(z);
+                console.log($rootScope.contentdata[x].cname+$rootScope.contentdata[x].parentid);
+
+                $scope[$rootScope.contentdata[x].cname+$rootScope.contentdata[x].parentid]=$rootScope.contentdata[x];
+
+            }
+
+            //var model=$parse($rootScope.contentdata[x].id);
+            //model.assign($scope, $rootScope.contentdata[x]);
+            //.id=$rootScope.contentdata[x];
+        }
+
+        //console.log('----'+$scope);
+
+
+    },$scope.interval);
+
+});
+tr.controller('signup', function($compile,$scope,contentservice,$state,$http,$cookieStore,$rootScope,Upload,$sce,carttotal,$uibModal) {
+
+    $http({
+        method  : 'POST',
+        async:   false,
+        url     :     $scope.adminUrl+'countryList',
+       // data    : $.param({'uid':$scope.userid}),  // pass in data as strings
+        headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
+    }) .success(function(data) {
+        console.log(data);
+       // $scope.form.country={};
+      //  $scope.form.country.s_name='Belize';
+      //  $('#country').val(20);
+        $scope.countrylist=data;
+        console.log($scope.countrylist);
+    });
+    $scope.format = 'MM/dd/yyyy';
+    $scope.open1 = function() {
+        $scope.opened = true;
+    };
+
+    $scope.form={'dob':new Date()};
+    $rootScope.usertype='generaluser';
+
+    $scope.clientgenderValidator=function(){
+
+
+        //console.log('in drone validator');
+        //console.log($scope.signupForm.$submitted);
+        //console.log($("input[name='drone']:checked").val());
+
+        if($scope.signup.$submitted){
+
+            if(typeof ($("input[name='gender']:checked").val()) != 'undefined' )
+            {
+                $scope.clientgenderValidatorerror=false;
+                //console.log('in true');
+                return true ;
+            }
+            else {
+                //console.log('in false');
+                $scope.clientgenderValidatorerror=true;
+                return '';
+
+            }
+
+        }
+
+    }
+    $scope.submitsignupForm = function(){
+
+
+
+
+        $http({
+            method  : 'POST',
+            async:   false,
+            url     : $scope.adminUrl+'addadmin?type='+$rootScope.usertype,
+            data    : $.param($scope.form),  // pass in data as strings
+            headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
+        }) .success(function(data) {
+            //$rootScope.stateIsLoading = false;
+            if(data.status == 'error'){
+                console.log(data);
+                $('.email_div').append('<label class="control-label has-error validationMessage">This email already exists.</label>');
+            }else{
+                $scope.signup.reset();
+                $uibModal.open({
+                    animation: true,
+                    templateUrl: 'signupsuccess.html',
+                    controller: 'ModalInstanceCtrl',
+                    size: 'lg',
+                    scope:$scope
+                });
+
+                //$state.go('ge-list');
+                //return;
+            }
+
+
+
+        });
+
+
+    }
+
+});
+tr.controller('login', function($compile,$scope,contentservice,$state,$http,$cookieStore,$rootScope,Upload,$sce,carttotal) {
+    $scope.adminloginsubmit = function(){
+        $rootScope.stateIsLoading = true;
+        $http({
+            method  : 'POST',
+            async:   false,
+            url     : $scope.adminUrl+'adminlogin',
+            data    : $.param($scope.form),  // pass in data as strings
+            headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
+        }) .success(function(data) {
+            $rootScope.stateIsLoading = false;
+            if(data.status == 'success'){
+                $cookieStore.put('userid',data.userdetails.id);
+                $cookieStore.put('useremail',data.userdetails.email);
+                $cookieStore.put('userfullname',data.userdetails.fname+' '+data.userdetails.lname);
+                $cookieStore.put('username',data.userdetails.username);
+
+                if(typeof (data.userdetails.roles[4]) != 'undefined')
+                    $cookieStore.put('userrole',4);
+                //if(typeof (data.userdetails.roles[5]) != 'undefined')
+                //    $cookieStore.put('userrole',5);
+                //if(typeof (data.userdetails.roles[6]) != 'undefined')
+                //    $cookieStore.put('userrole',6);
+                //if(typeof (data.userdetails.roles[7]) != 'undefined')
+                //    $cookieStore.put('userrole',7);
+                console.log($cookieStore.get('userid'));
+                console.log($cookieStore.get('useremail'));
+                console.log($cookieStore.get('userfullname'));
+
+                $state.go('dashboard');
+            }
+            else{
+                $scope.errormsg = data.msg;
+            }
+
+        });
+    }
+
+});
+
+tr.controller('forgotpassword', function($scope,$state,$http,$cookieStore,$rootScope) {
+    $scope.forgotpasssubmit = function(){
+        $rootScope.stateIsLoading = true;
+        $http({
+            method  : 'POST',
+            async:   false,
+            url     : $scope.adminUrl+'forgotpass',
+            data    : $.param($scope.form),  // pass in data as strings
+            headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
+        }) .success(function(data) {
+            $rootScope.stateIsLoading = false;
+            if(data.status == 'success'){
+                $cookieStore.put('user_id',data.userdetails.user_id);
+                $cookieStore.put('user_email',data.userdetails.email);
+
+                $rootScope.user_id=$cookieStore.get('user_id');
+                $rootScope.user_email=$cookieStore.get('user_email');
+
+                // console.log($rootScope.user_email);
+                // console.log($rootScope.user_id);
+                //console.log($rootScope.refferalcodes);
+
+                $state.go('forgot-password-check');
+
+
+            }else{
+                $scope.errormsg = data.msg;
+            }
+
+        });
+    }
+});
+tr.controller('forgotpasswordcheck', function($scope,$state,$http,$cookieStore,$rootScope) {
+    $scope.form={email:$rootScope.user_email}
+    $scope.forgotpasschecksubmit = function(){
+        $rootScope.stateIsLoading = true;
+        $http({
+            method  : 'POST',
+            async:   false,
+            url     : $scope.adminUrl+'forgotpassaccesscheck',
+            data    : $.param($scope.form),  // pass in data as strings
+            headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
+        }) .success(function(data) {
+            $rootScope.stateIsLoading = false;
+            if(data.status == 'success'){
+                $state.go('change-password');
+                return
+
+            }else{
+                $scope.errormsg = data.msg;
+            }
+
+        });
+    }
+});
+
+tr.controller('change_password', function($scope,$state,$http,$cookieStore,$rootScope) {
+    $scope.form={email:$rootScope.user_email,user_id:$rootScope.user_id}
+    $scope.changepassFormSubmit = function(){
+        $rootScope.stateIsLoading = true;
+        $http({
+            method  : 'POST',
+            async:   false,
+            url     : $scope.adminUrl+'changepassword',
+            data    : $.param($scope.form),  // pass in data as strings
+            headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
+        }) .success(function(data) {
+            $rootScope.stateIsLoading = false;
+            if(data.status == 'success'){
+                $state.go('login');
+                return
+
+            }else{
+                $scope.errormsg = data.msg;
+            }
+
+        });
+    }
+});
+
+
+tr.controller('affiliate', function($compile,$scope,contentservice,$state,$http,$cookieStore,$rootScope,Upload,$sce,carttotal) {
 
     $scope.interval=600;
     $scope.contentupdated=false;
@@ -668,13 +1379,13 @@ tr.controller('header', function($compile,$scope,contentservice,$state,$http,$co
              }*/
 
 
-            console.log(($rootScope.contentdata[x].content));
+           // console.log(($rootScope.contentdata[x].content));
             $scope[$rootScope.contentdata[x].cname+$rootScope.contentdata[x].id]=$rootScope.contentdata[x];
             if($rootScope.contentdata[x].parentid!=0){
 
                 var z=parseInt($rootScope.contentdata[x].parentid);
-                console.log(z);
-                console.log($rootScope.contentdata[x].cname+$rootScope.contentdata[x].parentid);
+               // console.log(z);
+               // console.log($rootScope.contentdata[x].cname+$rootScope.contentdata[x].parentid);
 
                 $scope[$rootScope.contentdata[x].cname+$rootScope.contentdata[x].parentid]=$rootScope.contentdata[x];
 
@@ -700,7 +1411,7 @@ tr.controller('header', function($compile,$scope,contentservice,$state,$http,$co
 
         $rootScope.carttotal=parseInt(carttotal.getcontent('http://admin.jungledrones.com/carttotal?user='+$rootScope.cartuser));
 
-        console.log($rootScope.userid+'state change user id header ');
+      //  console.log($rootScope.userid+'state change user id header ');
 
     },2000);
 
@@ -722,7 +1433,7 @@ tr.controller('header', function($compile,$scope,contentservice,$state,$http,$co
 
     $rootScope.userrole=$cookieStore.get('userrole');
 
-    console.log($rootScope.userid+'--userid');
+    //console.log($rootScope.userid+'--userid');
     $rootScope.logout = function () {
         $cookieStore.remove('userid');
         $cookieStore.remove('username');
@@ -734,11 +1445,11 @@ tr.controller('header', function($compile,$scope,contentservice,$state,$http,$co
         $rootScope.userid=0;
         $rootScope.userrole=0;
 
-        console.log($rootScope.userid+'userid');
+       // console.log($rootScope.userid+'userid');
 
-        console.log('in logout');
+        //console.log('in logout');
         $rootScope.userid=0;
-        $state.go('index');
+        $state.go('home');
     }
 
 
@@ -916,7 +1627,7 @@ tr.controller('addcontent', function($compile,$scope,contentservice,$state,$http
         ],
         // toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
         toolbar: ' undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link  |   media fullpage | forecolor backcolor',
-        valid_elements : "a[href|target=_blank],strong/b,div[align|class],br,span,label,i[class],ul[class],li[class]",
+        valid_elements : "a[href|target| href=javascript:void(0)],strong,b,img,div[align|class],br,span,label,i[class],ul[class],ol[class],li[class],iframe[width|height|src|frameborder|allowfullscreen]",
         force_p_newlines : false,
         forced_root_block:'',
         extended_valid_elements : "label,span,i[class]"
@@ -1559,7 +2270,7 @@ tr.controller('editcontent', function($compile,$scope,contentservice,$state,$htt
         ],
         toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
         toolbar2: "print preview media | forecolor backcolor emoticons",
-        valid_elements : "a[href|target=_blank],strong/b,div[align|class],br,span,label,h3,h4,h2,h1,strong,i[class],ul[class],li[class]",
+        valid_elements : "a[href|target],strong,b,img[src|alt],div[align|class],br,span,label,h3,h4,h2,h1,strong,i[class],ul[class],ol[class],li[class],iframe[width|height|src|frameborder|allowfullscreen]",
         extended_valid_elements : "label,span,i[class]",
         'force_p_newlines'  : false,
         'forced_root_block' : '',
@@ -2107,7 +2818,7 @@ tr.controller('editcontent', function($compile,$scope,contentservice,$state,$htt
 
 
 
-tr.controller('login', function($scope,$state,$http,$cookieStore,$rootScope) {
+/*tr.controller('login', function($scope,$state,$http,$cookieStore,$rootScope) {
     $scope.login = function(){
         $rootScope.stateIsLoading = true;
         console.log(1);
@@ -2146,7 +2857,7 @@ tr.controller('login', function($scope,$state,$http,$cookieStore,$rootScope) {
 
                 $state.go('dashboard');
 
-                /*
+                /!*
 
 
                  if(typeof($cookieStore.get('idea_det_id')) != 'undefined' && $cookieStore.get('idea_det_id')>0) {
@@ -2155,7 +2866,7 @@ tr.controller('login', function($scope,$state,$http,$cookieStore,$rootScope) {
                  $state.go('ideadetails',{ideaId: $scope.idea_det_id});
                  return
                  }else{
-                 */
+                 *!/
                 //   $state.go('dashboard');
                 //  return
                 // }
@@ -2169,7 +2880,7 @@ tr.controller('login', function($scope,$state,$http,$cookieStore,$rootScope) {
 
         });
     }
-});
+});*/
 
 tr.controller('addadmin', function($scope,$state,$http,$cookieStore,$rootScope) {
     // $state.go('login');
@@ -2325,21 +3036,19 @@ tr.controller('editimagesize', function($scope,$state,$http,$cookieStore,$rootSc
 })
 
 
-tr.controller('adminlist', function($scope,$state,$http,$cookieStore,$rootScope) {
-    $scope.currentPage=1;
-    $scope.perPage=3;
-    $scope.begin=0;
-
-    $scope.setPage = function (pageNo) {
-        $scope.currentPage = pageNo;
+tr.controller('adminlist', function($scope,$state,$http,$cookieStore,$rootScope,$uibModal) {
+    $scope.predicate = 'uid';
+    $scope.reverse = true;
+    $scope.order = function(predicate) {
+        $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
+        $scope.predicate = predicate;
     };
+    $scope.currentPage=1;
+    $scope.perPage=10;
 
-    $scope.pageChanged = function(){
-        console.log($scope.currentPage);
-        $scope.begin=parseInt($scope.currentPage-1)*$scope.perPage;
-        $scope.userlistp = $scope.userlist.slice($scope.begin, parseInt($scope.begin+$scope.perPage));
-    }
-    $http({
+    $scope.totalItems = 0;
+
+    $scope.filterResult = [];    $http({
         method  : 'POST',
         async:   false,
         url     : $scope.adminUrl+'adminlist',
@@ -2357,11 +3066,25 @@ tr.controller('adminlist', function($scope,$state,$http,$cookieStore,$rootScope)
     $scope.searchkey = '';
     $scope.search = function(item){
 
-        if ( (item.fname.indexOf($scope.searchkey) != -1) || (item.lname.indexOf($scope.searchkey) != -1) ||(item.mail.indexOf($scope.searchkey) != -1)||(item.mobile_no.indexOf($scope.searchkey) != -1)||(item.phone_no.indexOf($scope.searchkey) != -1) ||(item.address.indexOf($scope.searchkey) != -1)){
+        if ( (item.fname.toString().toLowerCase().indexOf($scope.searchkey.toString().toLowerCase()) != -1) || (item.lname.toString().toLowerCase().indexOf($scope.searchkey.toString().toLowerCase()) != -1) ||(item.mail.toString().toLowerCase().indexOf($scope.searchkey.toString().toLowerCase()) != -1)||(item.mobile_no.toString().toLowerCase().indexOf($scope.searchkey.toString().toLowerCase()) != -1)||(item.phone_no.toString().toLowerCase().indexOf($scope.searchkey.toString().toLowerCase()) != -1) ||(item.address.toString().toLowerCase().indexOf($scope.searchkey.toString().toLowerCase()) != -1)){
             return true;
         }
         return false;
     };
+
+    $scope.deladmin = function(item,size){
+
+        $scope.currentindex=$scope.userlist.indexOf(item);
+
+        $uibModal.open({
+            animation: true,
+            templateUrl: 'delconfirm.html',
+            controller: 'ModalInstanceCtrl',
+            size: size,
+            scope:$scope
+        });
+    }
+/*
     $scope.deladmin = function(item){
         $rootScope.stateIsLoading = true;
         var idx = $scope.userlist.indexOf(item);
@@ -2378,6 +3101,7 @@ tr.controller('adminlist', function($scope,$state,$http,$cookieStore,$rootScope)
 
         });
     }
+*/
 
     $scope.changeStatus = function(item){
         $rootScope.stateIsLoading = true;
@@ -2390,7 +3114,105 @@ tr.controller('adminlist', function($scope,$state,$http,$cookieStore,$rootScope)
             headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
         }) .success(function(data) {
             $rootScope.stateIsLoading = false;
-            $scope.userlist[idx].status = !$scope.userlist[idx].status;
+            if($scope.userlist[idx].status == 0){
+                $scope.userlist[idx].status = 1;
+            }else{
+                $scope.userlist[idx].status = 0;
+            }
+           // $scope.userlist[idx].status = !$scope.userlist[idx].status;
+        });
+    }
+
+
+
+
+    //console.log('in add admin form ');
+});
+tr.controller('generaluserlist', function($scope,$state,$http,$cookieStore,$rootScope,$uibModal) {
+    $rootScope.type='generaluser';
+    $scope.predicate = 'uid';
+    $scope.reverse = true;
+    $scope.order = function(predicate) {
+        $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
+        $scope.predicate = predicate;
+    };
+    $scope.currentPage=1;
+    $scope.perPage=10;
+
+    $scope.totalItems = 0;
+
+    $scope.filterResult = [];    $http({
+        method  : 'POST',
+        async:   false,
+        url     : $scope.adminUrl+'adminlist?type='+$rootScope.type,
+        // data    : $.param($scope.form),  // pass in data as strings
+        headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
+    }) .success(function(data) {
+        $rootScope.stateIsLoading = false;
+        console.log(data);
+        $scope.userlist=data;
+        $scope.userlistp = $scope.userlist.slice($scope.begin, parseInt($scope.begin+$scope.perPage));
+
+
+    });
+
+    $scope.searchkey = '';
+    $scope.search = function(item){
+
+        if ( (item.fname.toString().toLowerCase().indexOf($scope.searchkey.toString().toLowerCase()) != -1) || (item.lname.toString().toLowerCase().indexOf($scope.searchkey.toString().toLowerCase()) != -1) ||(item.mail.toString().toLowerCase().indexOf($scope.searchkey.toString().toLowerCase()) != -1)||(item.mobile_no.toString().toLowerCase().indexOf($scope.searchkey.toString().toLowerCase()) != -1)||(item.phone_no.toString().toLowerCase().indexOf($scope.searchkey.toString().toLowerCase()) != -1) ||(item.address.toString().toLowerCase().indexOf($scope.searchkey.toString().toLowerCase()) != -1)){
+            return true;
+        }
+        return false;
+    };
+
+    $scope.deladmin = function(item,size){
+
+        $scope.currentindex=$scope.userlist.indexOf(item);
+
+        $uibModal.open({
+            animation: true,
+            templateUrl: 'delconfirm.html',
+            controller: 'ModalInstanceCtrl',
+            size: size,
+            scope:$scope
+        });
+    }
+    /*
+     $scope.deladmin = function(item){
+     $rootScope.stateIsLoading = true;
+     var idx = $scope.userlist.indexOf(item);
+     $http({
+     method  : 'POST',
+     async:   false,
+     url     : $scope.adminUrl+'deleteadmin',
+     data    : $.param({uid: $scope.userlist[idx].uid}),  // pass in data as strings
+     headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
+     }) .success(function(data) {
+     $rootScope.stateIsLoading = false;
+     $scope.userlist.splice(idx,1);
+     $scope.userlistp = $scope.userlist.slice($scope.begin, parseInt($scope.begin+$scope.perPage));
+
+     });
+     }
+     */
+
+    $scope.changeStatus = function(item){
+        $rootScope.stateIsLoading = true;
+        var idx = $scope.userlist.indexOf(item);
+        $http({
+            method  : 'POST',
+            async:   false,
+            url     : $scope.adminUrl+'updatestatus',
+            data    : $.param({uid: $scope.userlist[idx].uid}),  // pass in data as strings
+            headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
+        }) .success(function(data) {
+            $rootScope.stateIsLoading = false;
+            if($scope.userlist[idx].status == 0){
+                $scope.userlist[idx].status = 1;
+            }else{
+                $scope.userlist[idx].status = 0;
+            }
+            // $scope.userlist[idx].status = !$scope.userlist[idx].status;
         });
     }
 
@@ -4249,15 +5071,15 @@ tr.controller('admin_header', function($scope,$state,$http,$cookieStore,$rootSco
     $scope.toggledropdown=function(){
 
         //angular.element('.user-manu-dropdown').toggleClass('open');
-        console.log('in user login');
+      //  console.log('in user login');
     }
 
 
     //angular.element('head').append('<script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>');
     //angular.element('head').append('<script src="ng-js/ui-bootstrap-tpls-0.14.3.min.js"></script>');
-    if(angular.element('head').find('script[src="plugins/fastclick/fastclick.min.js"]').length==0)
+    /*    if(angular.element('head').find('script[src="plugins/fastclick/fastclick.min.js"]').length==0)
         angular.element('head').append('<script src="plugins/fastclick/fastclick.min.js"></script>');
-    if(angular.element('head').find('script[src="dist/js/app.min.js"]').length==0)
+   if(angular.element('head').find('script[src="dist/js/app.min.js"]').length==0)
         angular.element('head').append('<script src="dist/js/app.min.js"></script>');
     if(angular.element('head').find('script[src="plugins/sparkline/jquery.sparkline.min.js"]').length==0)
         angular.element('head').append('<script src="plugins/sparkline/jquery.sparkline.min.js"></script>');
@@ -4270,7 +5092,7 @@ tr.controller('admin_header', function($scope,$state,$http,$cookieStore,$rootSco
     if(angular.element('head').find('script[src="dist/js/pages/dashboard2.js"]').length==0)
         angular.element('head').append('<script src="dist/js/pages/dashboard2.js"></script>');
     if(angular.element('head').find('script[src="dist/js/demo.js"]').length==0)
-        angular.element('head').append('<script src="dist/js/demo.js"></script>');
+        angular.element('head').append('<script src="dist/js/demo.js"></script>');*/
     /*
      angular.element('head').append('<script>+setTimeout(function(){
      $('input[name="event_daterange"]').daterangepicker({
@@ -4293,12 +5115,12 @@ tr.controller('admin_header', function($scope,$state,$http,$cookieStore,$rootSco
         $cookieStore.remove('userfullname');
 
         $rootScope.userrole=0;
-        $rootScope.userfullname=0;
+        $rootScope.userfullname='';
         $rootScope.userid=0;
         $rootScope.userrole=0;
 
-        console.log('in logout');
-        $state.go('index');
+       // console.log('in logout');
+        $state.go('home');
     }
 
     if (typeof($cookieStore.get('userid')) != 'undefined' && $cookieStore.get('userid') > 0) {
@@ -4306,12 +5128,12 @@ tr.controller('admin_header', function($scope,$state,$http,$cookieStore,$rootSco
         $rootScope.userfullname=$cookieStore.get('userfullname');
         $rootScope.userid=$cookieStore.get('userid');
         $rootScope.userrole=$cookieStore.get('userrole');
-        console.log($rootScope.userfullname);
+       //console.log($rootScope.userfullname);
     }
     else{
         $rootScope.userid=0;
 
-        console.log('you are not logged in !');
+       // console.log('you are not logged in !');
         //$state.go('login');
     }
 
@@ -4370,13 +5192,13 @@ tr.controller('footer', function($scope,$state,$http,$cookieStore,$rootScope,con
              }*/
 
 
-            console.log(($rootScope.contentdata[x].content));
+           // console.log(($rootScope.contentdata[x].content));
             $scope[$rootScope.contentdata[x].cname+$rootScope.contentdata[x].id]=$rootScope.contentdata[x];
             if($rootScope.contentdata[x].parentid!=0){
 
                 var z=parseInt($rootScope.contentdata[x].parentid);
-                console.log(z);
-                console.log($rootScope.contentdata[x].cname+$rootScope.contentdata[x].parentid);
+               // console.log(z);
+               // console.log($rootScope.contentdata[x].cname+$rootScope.contentdata[x].parentid);
 
                 $scope[$rootScope.contentdata[x].cname+$rootScope.contentdata[x].parentid]=$rootScope.contentdata[x];
 
@@ -4406,7 +5228,7 @@ tr.controller('services', function($scope,$state,$http,$cookieStore,$rootScope) 
 
         $('.vmtog').click(function(){
 
-            console.log('in');
+            //console.log('in');
             //$(this).css('margin-top','-20px');
             $(this).prev('div').stop(true, true).delay(500).toggleClass('ng-hide');
             $(this).prev().prev('p').stop(true, true).delay(500).toggleClass('ng-hide');
@@ -4457,12 +5279,12 @@ tr.controller('productdetails', function($scope,$state,$http,$cookieStore,$rootS
 
     $scope.cart = {};
 
-    console.log($scope.cart);
+   // console.log($scope.cart);
     //$cookieStore.put('cart',$scope.cart);
 
     $rootScope.addtocart=function(pid){
 
-        console.log($rootScope.userid+'userid..');
+       // console.log($rootScope.userid+'userid..');
 
         if($rootScope.userid == 0)  $scope.cartuser=$cookieStore.get('randomid');
         else {
@@ -4548,8 +5370,8 @@ tr.controller('productdetails', function($scope,$state,$http,$cookieStore,$rootS
     }).success(function(data){
         $scope.productlist=data;
         //$scope.productlist=data;
-        console.log(data[$scope.pid].product_name+'pname');
-        console.log($scope.productlist);
+       // console.log(data[$scope.pid].product_name+'pname');
+       // console.log($scope.productlist);
 
         $scope.pname=data[$scope.pid].product_name;
         $scope.pdesc=data[$scope.pid].product_desc;
@@ -4931,13 +5753,15 @@ tr.controller('stockcategory', function($scope,$state,$http,$cookieStore,$rootSc
 tr.controller('dashboard', function($scope,$state,$http,$cookieStore,$rootScope) {
     // $state.go('login');
 
+
     $scope.logout = function () {
         $cookieStore.remove('userid');
         $cookieStore.remove('username');
         $cookieStore.remove('useremail');
         $cookieStore.remove('userfullname');
-        $state.go('index');
+        $state.go('home');
     }
+
 
 });
 
